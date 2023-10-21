@@ -4,7 +4,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="Ap">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -16,6 +16,9 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
+          <h1 className="text-3xl font-bold underline text-red-300">
+            Hello world!
+          </h1>
           Learn React
         </a>
       </header>
