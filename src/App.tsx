@@ -1,10 +1,10 @@
-import React from 'react'
-import FundList from './components/FundList'
+import React from "react";
+import FundList from "./components/FundList";
 
 export default function App() {
   return (
     <div>
-        <FundList />
+      <FundList />
     </div>
-  )
+  );
 }

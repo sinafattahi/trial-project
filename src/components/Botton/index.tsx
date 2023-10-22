@@ -2,11 +2,11 @@ import React from "react";
 
 interface buttonProps {
   label: string;
-  color: string;
+  color: "red" | "green";
   onClick?: () => void;
 }
 
-function Botton({ label, color, ...props }: buttonProps) {
+const Botton = ({ label, color, ...props }: buttonProps) => {
   const classProp =
     color === "green"
       ? "text-green-600 border-green-600 hover:text-white hover:bg-green-600"
@@ -18,6 +18,6 @@ function Botton({ label, color, ...props }: buttonProps) {
       {label}
     </button>
   );
-}
+};
 
 export default Botton;

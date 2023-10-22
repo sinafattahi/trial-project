@@ -6,7 +6,7 @@ import Tag from "./Tag";
 
 import { FundListCardData } from "../data/FundListCardData";
 
-function FundList() {
+const FundList = () => {
   return (
     <div>
       <Header text="صندوق‌های سرمایه گذاری آگاه" />
@@ -17,6 +17,6 @@ function FundList() {
       </div>
     </div>
   );
-}
+};
 
 export default FundList;

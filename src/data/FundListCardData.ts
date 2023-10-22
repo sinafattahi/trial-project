@@ -21,7 +21,7 @@ export const FundListCardData : cardDataMode[] = [
         buyPrice : 343_343,
         salePrice : 343_343,
         outBoxText : "قابل معامله - سهامی",
-        outBoxTagColor: "bg-purple-500",
+        outBoxTagColor: "purple",
         propertyValue : 33_343_343,
         profit : 343_343,
         profitPercentage : 12.3
@@ -34,7 +34,7 @@ export const FundListCardData : cardDataMode[] = [
         buyPrice : 343_343,
         salePrice : 343_343,
         outBoxText : "صدور و ابطالی - درامد ثابت",
-        outBoxTagColor: "bg-blue-500",
+        outBoxTagColor: "blue"
     }
     
 ]

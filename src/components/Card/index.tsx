@@ -1,11 +1,11 @@
 import React from "react";
-import { cardDataMode } from "../data/FundListCardData";
-import Tag from "./Tag";
-import OutBoxTag from "./OutBoxTag";
-import Button from "./Botton";
-import Svg from "./Svg";
+import { cardDataMode } from "../../data/FundListCardData";
+import Tag from "../Tag";
+import OutBoxTag from "../OutBoxTag";
+import Button from "../Botton";
+import Svg from "../Svg";
 
-function Card({
+const Card = ({
   id,
   name,
   revenue,
@@ -17,7 +17,7 @@ function Card({
   propertyValue,
   profit,
   profitPercentage,
-}: cardDataMode) {
+}: cardDataMode) => {
   return (
     <div className="border-2 p-2 m-2 shadow-xl rounded-md">
       <div className="flex justify-between p-1 relative">
@@ -80,6 +80,6 @@ function Card({
       )}
     </div>
   );
-}
+};
 
 export default Card;
