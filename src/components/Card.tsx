@@ -3,6 +3,7 @@ import { cardDataMode } from "../data/FundListCardData";
 import Tag from "./Tag";
 import OutBoxTag from "./OutBoxTag";
 import Button from "./Botton";
+import Svg from "./Svg";
 
 function Card({
   id,
@@ -47,17 +48,24 @@ function Card({
             <div className="my-2 flex justify-between">
               <span>ارزش دارایی:</span>
               <span>
-                {new Intl.NumberFormat().format(propertyValue || 0)}{" "}
+                {new Intl.NumberFormat().format(propertyValue!)}{" "}
                 <span className="text-xs">ریال</span>
               </span>
             </div>
             <div className="my-2 flex justify-between text-sm">
               <span>سود:</span>
-              <span>
-                ({profitPercentage}%)
-                {new Intl.NumberFormat().format(profit || 0)}
-                <span className="text-xs">ریال</span>
-              </span>
+              <div className="flex">
+                <span>
+                  ({profitPercentage}%)
+                  {new Intl.NumberFormat().format(profit || 0)}
+                  <span className="text-xs">ریال</span>
+                </span>
+                {profitPercentage! >= 0 ? (
+                  <Svg name="up" />
+                ) : (
+                  <Svg name="down" />
+                )}
+              </div>
             </div>
           </div>
           <div className="m-2 flex gap-2">
