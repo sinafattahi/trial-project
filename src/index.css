@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: vazir;
-  src: url(assets/fonts/vazir-font-v16.1.0/Vazir.woff);
+  font-family: iranSans;
+  src: url(assets/fonts/iranSans/WebFonts/fonts/woff2/IRANSansWeb.woff2);
 }
 
 @font-face {
@@ -14,7 +14,7 @@
 
 body {
   margin: 0;
-  font-family: vazirDig,vazir,
+  font-family: vazirDig, iranSans, 
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -28,13 +28,15 @@ function Card({
         <div className="m-2 flex justify-between text-sm">
           <span>قیمت خرید هر واحد:</span>
           <span>
-            {buyPrice} <span className="text-xs">ریال</span>
+            {new Intl.NumberFormat().format(buyPrice)}{" "}
+            <span className="text-xs">ریال</span>
           </span>
         </div>
         <div className="m-2 flex justify-between text-sm">
           <span>قیمت فروش هر واحد:</span>
           <span>
-            {salePrice} <span className="text-xs">ریال</span>
+            {new Intl.NumberFormat().format(salePrice)}{" "}
+            <span className="text-xs">ریال</span>
           </span>
         </div>
       </div>
@@ -45,14 +47,15 @@ function Card({
             <div className="my-2 flex justify-between">
               <span>ارزش دارایی:</span>
               <span>
-                {propertyValue} <span className="text-xs">ریال</span>
+                {new Intl.NumberFormat().format(propertyValue || 0)}{" "}
+                <span className="text-xs">ریال</span>
               </span>
             </div>
             <div className="my-2 flex justify-between text-sm">
               <span>سود:</span>
               <span>
                 ({profitPercentage}%)
-                {profit}
+                {new Intl.NumberFormat().format(profit || 0)}
                 <span className="text-xs">ریال</span>
               </span>
             </div>
