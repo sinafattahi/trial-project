@@ -1,37 +1,40 @@
-interface dataMode{
+export interface cardDataMode{
+    id: number,
     name : string,
     revenue : number,
     isAsset : boolean,
     buyPrice: number,
     salePrice: number,
-    outBoxTag: string,
+    outBoxText: string,
     outBoxTagColor : string,
     propertyValue?: number,
     profit ?: number,
     profitPercentage ?: number
 }
 
-export const FundListCardData : dataMode[] = [
+export const FundListCardData : cardDataMode[] = [
     {
+        id: 1,
         name: 'هستی‌بخش آگاه - آکاس',
         revenue : +2.45,
         isAsset : true,
         buyPrice : 343_343,
         salePrice : 343_343,
-        outBoxTag : "قابل معامله - سهامی",
-        outBoxTagColor: "purple-700",
+        outBoxText : "قابل معامله - سهامی",
+        outBoxTagColor: "bg-purple-500",
         propertyValue : 33_343_343,
         profit : 343_343,
         profitPercentage : 12.3
     },
     {
+        id: 2,
         name: 'زمرد آگاه',
         revenue : -2.45,
         isAsset : false,
         buyPrice : 343_343,
         salePrice : 343_343,
-        outBoxTag : "صدور و ابطالی - درامد ثابت",
-        outBoxTagColor: "blue-700",
+        outBoxText : "صدور و ابطالی - درامد ثابت",
+        outBoxTagColor: "bg-blue-500",
     }
     
 ]
