@@ -2,7 +2,7 @@ import React from "react";
 import {Card} from "components/Card";
 import {Header} from "components/Header";
 
-import { FUND_LIST_CARD_DATA } from "constants/fundList";
+import { FUND_LIST_DATA } from "constants/fundList";
 import {Footer} from "components/Footer";
 
 export const FundList = () => {
@@ -10,7 +10,7 @@ export const FundList = () => {
     <div>
       <Header text="صندوق‌های سرمایه گذاری آگاه" />
       <div>
-        {FUND_LIST_CARD_DATA.map((fund) => (
+        {FUND_LIST_DATA.map((fund) => (
           <Card key={fund.id} {...fund} />
         ))}
       </div>
