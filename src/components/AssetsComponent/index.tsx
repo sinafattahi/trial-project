@@ -17,7 +17,7 @@ export const AssetsComponent = ({
       <div className="my-2 flex justify-between">
         <span>ارزش دارایی:</span>
         <span>
-          {new Intl.NumberFormat().format(propertyValue!)}{" "}
+          {new Intl.NumberFormat().format(propertyValue!)}
           <span className="text-xs">ریال</span>
         </span>
       </div>

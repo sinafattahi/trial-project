@@ -41,16 +41,16 @@ export const Card = ({
       )}
       {isAsset ? (
         <div className="m-2 flex gap-2">
-          <Button color="green" disable={false} mode="OutLine">
+          <Button color="green" disable={false} mode="outLine">
             خرید
           </Button>
-          <Button color="red" disable={false} mode="OutLine">
+          <Button color="red" disable={false} mode="outLine">
             فروش
           </Button>
         </div>
       ) : (
         <div className="m-2">
-          <Button disable={false} mode="OutLine" color="green">
+          <Button disable={false} mode="outLine" color="green">
             خرید
           </Button>
         </div>

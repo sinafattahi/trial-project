@@ -28,7 +28,7 @@ export const BuyValueFilled: Story = {
     color: "green",
     children: "خرید",
     disable: false,
-    mode: "Filled",
+    mode: "filled",
   },
 };
 
@@ -37,7 +37,7 @@ export const BuyValueOutLine: Story = {
     color: "green",
     children: "خرید",
     disable: false,
-    mode: "OutLine",
+    mode: "outLine",
   },
 };
 
@@ -46,7 +46,7 @@ export const SaleValueFilled: Story = {
     color: "red",
     children: "فروش",
     disable: false,
-    mode: "Filled",
+    mode: "filled",
   },
 };
 
@@ -55,7 +55,7 @@ export const SaleValueOutLine: Story = {
     color: "red",
     children: "فروش",
     disable: false,
-    mode: "OutLine",
+    mode: "outLine",
   },
 };
 
@@ -64,7 +64,7 @@ export const DisabledFilled: Story = {
     color: "red",
     children: "فروش",
     disable: true,
-    mode: "Filled",
+    mode: "filled",
   },
 };
 
@@ -73,6 +73,6 @@ export const DisabledOutLine: Story = {
     color: "red",
     children: "فروش",
     disable: true,
-    mode: "OutLine",
+    mode: "outLine",
   },
 };

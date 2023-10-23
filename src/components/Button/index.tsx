@@ -6,47 +6,29 @@ interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   color: "red" | "green";
   type?: "submit" | "reset" | "button";
   disable: boolean;
-  mode: "Filled" | "OutLine";
+  mode: "filled" | "outLine";
 }
 
 export const Button = ({
   label,
   color,
   disable = false,
-  mode = "OutLine",
+  mode = "outLine",
   children,
   ...props
 }: ButtonProps) => {
-  let btnClass: string = "";
-
-  const btnDisabledClass =
-    "bg-gray-200 border border-black px-12 py-1 rounded-md w-full";
-
-  const btnOutlineClass = classNames(
-    "bg-white border px-12 py-1 rounded-md w-full hover:text-white",
-    {
-      "text-red-600 border-red-600  hover:bg-red-600": color === "red",
-      "text-green-600 border-green-600  hover:bg-green-600": color === "green",
-    }
-  );
-
-  const btnFilledClass = classNames(
-    "hover:bg-white border px-12 py-1 rounded-md w-full ",
-    {
-      "hover:text-red-600 border-red-600  bg-red-600": color === "red",
-      "hover:text-green-600 border-green-600  bg-green-600": color === "green",
-    }
-  );
-
-  if (disable) {
-    btnClass = btnDisabledClass;
-  } else {
-    if (mode === "OutLine") {
-      btnClass = btnOutlineClass;
-    } else {
-      btnClass = btnFilledClass;
-    }
-  }
+  const btnClass = classNames({
+    "opacity-50 bg-gray-200 border border-black px-12 py-1 rounded-md w-full":
+      disable === true,
+    "bg-white border px-12 py-1 rounded-md w-full hover:text-white text-red-600 border-red-600  hover:bg-red-600":
+      color === "red" && mode === "outLine" && disable === false,
+    "bg-white border px-12 py-1 rounded-md w-full hover:text-white text-green-600 border-green-600  hover:bg-green-600":
+      color === "green" && mode === "outLine" && disable === false,
+    "hover:bg-white border px-12 py-1 rounded-md w-full hover:text-red-600 border-red-600  bg-red-600":
+      color === "red" && mode === "filled" && disable === false,
+    "hover:bg-white border px-12 py-1 rounded-md w-full hover:text-green-600 border-green-600  bg-green-600":
+      color === "green" && mode === "filled" && disable === false,
+  });
 
   return (
     <button disabled={disable} className={btnClass} {...props}>

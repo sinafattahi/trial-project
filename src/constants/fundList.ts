@@ -1,6 +1,6 @@
 import { CardDataMode } from "../types/FundList"
 
-export const FundListCardData : CardDataMode[] = [
+export const FUND_LIST_CARD_DATA : CardDataMode[] = [
     {
         id: 1,
         name: 'هستی‌بخش آگاه - آکاس',

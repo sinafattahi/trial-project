@@ -1,13 +1,13 @@
 import React from "react";
 
-var classNames = require("classnames");
+const classNames = require("classnames");
 interface OutBoxTagProps {
   outBoxTagColor: "blue" | "purple";
   outBoxText: string;
 }
 
 export const OutBoxTag = ({ outBoxTagColor, outBoxText }: OutBoxTagProps) => {
-  var outBoxClass = classNames(
+  const outBoxClass = classNames(
     "absolute top-10 right-[-16px] md:top-12 px-4 text-white text-sm",
     {
       "bg-blue-500": outBoxTagColor === "blue",

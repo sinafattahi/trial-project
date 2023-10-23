@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { FundList } from "./pages/FundList";
+import { FundList } from "pages/FundList";
 
 export default function App() {
   return (
