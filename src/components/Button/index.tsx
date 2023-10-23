@@ -31,7 +31,12 @@ export const Button = ({
   });
 
   return (
-    <button disabled={disable} className={btnClass} {...props}>
+    <button
+      disabled={disable}
+      className={btnClass}
+      aria-label={label}
+      {...props}
+    >
       {children}
     </button>
   );
