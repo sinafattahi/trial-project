@@ -1,11 +1,12 @@
 import React from "react";
-import { cardDataMode } from "../../data/FundListCardData";
-import Tag from "../Tag";
-import OutBoxTag from "../OutBoxTag";
-import Button from "../Botton";
-import Svg from "../Svg";
+import { CardDataMode } from "types/FundList";
+import { Tag } from "components/Tag";
+import { OutBoxTag } from "components/OutBoxTag";
+import { Button } from "components/Button";
+import { AssetsComponent } from "components/AssetsComponent";
+import { PriceSection } from "components/PriceSection";
 
-const Card = ({
+export const Card = ({
   id,
   name,
   revenue,
@@ -14,72 +15,46 @@ const Card = ({
   salePrice,
   outBoxText,
   outBoxTagColor,
-  propertyValue,
-  profit,
-  profitPercentage,
-}: cardDataMode) => {
+  propertyValue = 0,
+  profit = 0,
+  profitPercentage = 0,
+}: CardDataMode) => {
   return (
-    <div className="border-2 p-2 m-2 shadow-xl rounded-md">
+    <div className="border-2 p-2 m-2 shadow-xl rounded-md md:w-2/5 md:-translate-x-[73%]">
       <div className="flex justify-between p-1 relative">
         <span>{name}</span>
         <Tag revenue={revenue} text="بازده سال" />
         <OutBoxTag outBoxTagColor={outBoxTagColor} outBoxText={outBoxText} />
       </div>
       <div className="p-2 m-2">
-        <div className="m-2 flex justify-between text-sm">
-          <span>قیمت خرید هر واحد:</span>
-          <span>
-            {new Intl.NumberFormat().format(buyPrice)}{" "}
-            <span className="text-xs">ریال</span>
-          </span>
-        </div>
-        <div className="m-2 flex justify-between text-sm">
-          <span>قیمت فروش هر واحد:</span>
-          <span>
-            {new Intl.NumberFormat().format(salePrice)}{" "}
-            <span className="text-xs">ریال</span>
-          </span>
-        </div>
+        <PriceSection price={buyPrice} text="قیمت خرید هر واحد" unit="ریال" />
+        <PriceSection price={salePrice} text="قیمت فروش هر واحد" unit="ریال" />
       </div>
-
       {isAsset ? (
-        <div>
-          <div className="bg-blue-400 p-3 rounded-md m-2 text-white">
-            <div className="my-2 flex justify-between">
-              <span>ارزش دارایی:</span>
-              <span>
-                {new Intl.NumberFormat().format(propertyValue!)}{" "}
-                <span className="text-xs">ریال</span>
-              </span>
-            </div>
-            <div className="my-2 flex justify-between text-sm">
-              <span>سود:</span>
-              <div className="flex">
-                <span>
-                  ({profitPercentage}%)
-                  {new Intl.NumberFormat().format(profit || 0)}
-                  <span className="text-xs">ریال</span>
-                </span>
-                {profitPercentage! >= 0 ? (
-                  <Svg name="up" />
-                ) : (
-                  <Svg name="down" />
-                )}
-              </div>
-            </div>
-          </div>
-          <div className="m-2 flex gap-2">
-            <Button color="green" label="خرید" />
-            <Button color="red" label="فروش" />
-          </div>
+        <AssetsComponent
+          profit={profit}
+          profitPercentage={profitPercentage}
+          propertyValue={propertyValue}
+        />
+      ) : (
+        <></>
+      )}
+      {isAsset ? (
+        <div className="m-2 flex gap-2">
+          <Button color="green" disable={false} mode="OutLine">
+            خرید
+          </Button>
+          <Button color="red" disable={false} mode="OutLine">
+            فروش
+          </Button>
         </div>
       ) : (
         <div className="m-2">
-          <Button color="green" label="خرید" />
+          <Button disable={false} mode="OutLine" color="green">
+            خرید
+          </Button>
         </div>
       )}
     </div>
   );
 };
-
-export default Card;

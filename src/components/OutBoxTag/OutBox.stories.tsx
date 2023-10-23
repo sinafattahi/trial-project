@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import OutBoxTag from ".";
+import {OutBoxTag} from ".";
 
 const meta = {
   title: "Component/OutBoxTag",
@@ -11,7 +11,7 @@ const meta = {
   argTypes: {},
   decorators: [
     (Story) => (
-      <div dir="rtl" className="bg-n-100 p-8 rounded w-90 mx-auto my-10">
+      <div dir="rtl" className="p-8 rounded w-90 mx-auto my-10">
         <Story />
       </div>
     ),

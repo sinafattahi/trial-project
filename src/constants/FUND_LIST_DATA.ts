@@ -1,18 +1,6 @@
-export interface cardDataMode{
-    id: number,
-    name : string,
-    revenue : number,
-    isAsset : boolean,
-    buyPrice: number,
-    salePrice: number,
-    outBoxText: string,
-    outBoxTagColor : string,
-    propertyValue?: number,
-    profit ?: number,
-    profitPercentage ?: number
-}
+import { CardDataMode } from "../types/FundList"
 
-export const FundListCardData : cardDataMode[] = [
+export const FundListCardData : CardDataMode[] = [
     {
         id: 1,
         name: 'هستی‌بخش آگاه - آکاس',

@@ -1,18 +1,22 @@
 import React from "react";
 
-interface outBoxTagProps {
-  outBoxTagColor: string;
+var classNames = require("classnames");
+interface OutBoxTagProps {
+  outBoxTagColor: "blue" | "purple";
   outBoxText: string;
 }
 
-const OutBoxTag = ({ outBoxTagColor, outBoxText }: outBoxTagProps) => {
-
-  const colorClass = `bg-${outBoxTagColor}-500`
+export const OutBoxTag = ({ outBoxTagColor, outBoxText }: OutBoxTagProps) => {
+  var outBoxClass = classNames(
+    "absolute top-10 right-[-16px] md:top-12 px-4 text-white text-sm",
+    {
+      "bg-blue-500": outBoxTagColor === "blue",
+      "bg-purple-500": outBoxTagColor === "purple",
+    }
+  );
 
   return (
-    <div
-      className={`${colorClass} absolute top-10 right-[-16px] md:top-12 px-4 text-white text-sm`}
-    >
+    <div className={outBoxClass}>
       {outBoxText}
 
       <div
@@ -30,5 +34,3 @@ const OutBoxTag = ({ outBoxTagColor, outBoxText }: outBoxTagProps) => {
     </div>
   );
 };
-
-export default OutBoxTag;

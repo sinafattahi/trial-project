@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import {Header} from ".";
+import {Footer} from ".";
 
 const meta = {
-  title: "Component/Header",
-  component: Header,
+  title: "Component/Footer",
+  component: Footer,
   parameters: {
     layout: "centered",
   },
@@ -19,14 +19,12 @@ const meta = {
       </div>
     ),
   ],
-} satisfies Meta<typeof Header>;
+} satisfies Meta<typeof Footer>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const header: Story = {
-  args: {
-    text: "صندوق سرمایه گذاری آگاه",
-  },
+export const defaultFooter: Story = {
+  args: {},
 };

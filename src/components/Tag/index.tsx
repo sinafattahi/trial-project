@@ -1,11 +1,11 @@
 import React from "react";
 
-interface tagProps {
+interface TagProps {
   revenue: number;
   text?: string;
 }
 
-const Tag = ({ revenue, text }: tagProps) => {
+export const Tag = ({ revenue, text }: TagProps) => {
   const color: string = revenue >= 0 ? "bg-green-500" : "bg-red-500";
   return (
     <div className={`${color} flex flex-col text-white p-2 rounded-md text-xs`}>
@@ -15,5 +15,3 @@ const Tag = ({ revenue, text }: tagProps) => {
     </div>
   );
 };
-
-export default Tag;

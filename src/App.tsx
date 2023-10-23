@@ -1,10 +1,12 @@
 import React from "react";
-import FundList from "./components/FundList";
+import { Route, Routes } from "react-router-dom";
+
+import { FundList } from "./pages/FundList";
 
 export default function App() {
   return (
-    <div>
-      <FundList />
-    </div>
+    <Routes>
+      <Route path="/" Component={FundList} />
+    </Routes>
   );
 }

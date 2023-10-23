@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Card from ".";
+import {Card} from ".";
 
 const meta = {
   title: "Component/Card",
@@ -11,7 +11,7 @@ const meta = {
   argTypes: {},
   decorators: [
     (Story) => (
-      <div dir="rtl" className="bg-n-100 p-8 rounded w-90 mx-auto my-10">
+      <div dir="rtl" className="p-8 rounded w-90 mx-auto my-10">
         <Story />
       </div>
     ),
@@ -31,7 +31,7 @@ export const haveAssets: Story = {
     buyPrice: 343_343,
     salePrice: 343_343,
     outBoxText: "قابل معامله - سهامی",
-    outBoxTagColor: "bg-purple-500",
+    outBoxTagColor: "purple",
     propertyValue: 33_343_343,
     profit: 343_343,
     profitPercentage: 12.3,
@@ -47,6 +47,6 @@ export const dontHaveAssets: Story = {
     buyPrice: 343_343,
     salePrice: 343_343,
     outBoxText: "صدور و ابطالی - درامد ثابت",
-    outBoxTagColor: "bg-blue-500",
+    outBoxTagColor: "blue",
   },
 };

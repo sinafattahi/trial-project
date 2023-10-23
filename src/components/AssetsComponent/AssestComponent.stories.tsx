@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import {Header} from ".";
+import { AssetsComponent } from ".";
 
 const meta = {
-  title: "Component/Header",
-  component: Header,
+  title: "Component/AssetsComponent",
+  component: AssetsComponent,
   parameters: {
     layout: "centered",
   },
@@ -19,14 +19,16 @@ const meta = {
       </div>
     ),
   ],
-} satisfies Meta<typeof Header>;
+} satisfies Meta<typeof AssetsComponent>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const header: Story = {
+export const haveAssets: Story = {
   args: {
-    text: "صندوق سرمایه گذاری آگاه",
+    propertyValue: 33_343_343,
+    profit: 343_343,
+    profitPercentage: 12.3,
   },
 };
