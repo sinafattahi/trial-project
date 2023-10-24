@@ -16,9 +16,6 @@ export const FundList = () => {
     .get("https://testapi.io/api/Ali6600/getFunds")
     .then(function (response) {
       setData(response.data.fundTypes);
-      console.log(response.data.fundTypes[0]);
-      console.log(response.data.fundTypes[1]);
-      console.log(response.data.fundTypes[2]);
     })
     .catch(function (error) {
       // handle error

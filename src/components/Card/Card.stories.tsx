@@ -25,10 +25,8 @@ type Story = StoryObj<typeof meta>;
 export const haveAssets: Story = {
   args: {
     id: 1,
-    name : "آگاس",
-    companyName : "هستی‌بخش آگاه",
-    minBuyOrderFund: 343_343,
-    minSellOrderFund: 343_343,
+    name : "هستی‌بخش آگاه",
+    issuingNav: 343_343,
     fundTypeCode : 1 ,
     fundTypeTitle: "قابل معامله - سهامی",  
     annualEfficiency : 12.3
@@ -38,10 +36,8 @@ export const haveAssets: Story = {
 export const dontHaveAssets: Story = {
   args: {
     id: 2,
-    name : "",
-    companyName : "زمرد آگاه",
-    minBuyOrderFund: 343_343,
-    minSellOrderFund: 343_343,
+    name :  "زمرد آگاه",
+    issuingNav: 343_343,
     fundTypeCode : 1 ,
     fundTypeTitle: "صدور و ابطالی - درامد ثابت",  
     annualEfficiency : 12.3

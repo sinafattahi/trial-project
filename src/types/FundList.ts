@@ -15,10 +15,8 @@ export interface CardDataMode{
 export interface RealData{
     id: number,
     name : string,
-    companyName : string,
-    minBuyOrderFund: number,
-    minSellOrderFund: number,
-    fundTypeCode : 1 | 2 | 3,
+    issuingNav: number,
+    fundTypeCode : 1 | 2 ,
     fundTypeTitle: string,  
     annualEfficiency : number
 }

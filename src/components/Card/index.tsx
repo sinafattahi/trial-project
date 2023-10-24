@@ -1,33 +1,30 @@
 import React from "react";
-import { CardDataMode } from "types/FundList";
+// import { CardDataMode } from "types/FundList";
 import { Tag } from "components/Tag";
 import { OutBoxTag } from "components/OutBoxTag";
 import { Button } from "components/Button";
-import { AssetsComponent } from "components/AssetsComponent";
+// import { AssetsComponent } from "components/AssetsComponent";
 import { PriceSection } from "components/PriceSection";
 import { RealData } from "types/FundList";
 
 export const Card = ({
   id,
   name,
-    companyName,
-    minBuyOrderFund,
-    minSellOrderFund,
-    fundTypeCode,
-    fundTypeTitle,  
-    annualEfficiency
-  
+  issuingNav,
+  fundTypeCode,
+  fundTypeTitle,
+  annualEfficiency,
 }: RealData) => {
   return (
     <div className="border-2 p-2 m-2 shadow-xl rounded-md md:w-2/5 md:-translate-x-[73%]">
       <div className="flex justify-between p-1 relative">
-        <span>`${name}-${companyName}`</span>
+        <span>{name}</span>
         <Tag revenue={annualEfficiency} text="بازده سال" />
         <OutBoxTag fundTypeCode={fundTypeCode} fundTypeTitle={fundTypeTitle} />
       </div>
       <div className="p-2 m-2">
-        <PriceSection price={minBuyOrderFund} text="قیمت خرید هر واحد" unit="ریال" />
-        <PriceSection price={minSellOrderFund} text="قیمت فروش هر واحد" unit="ریال" />
+        <PriceSection price={issuingNav} text="قیمت خرید هر واحد" unit="ریال" />
+        <PriceSection price={issuingNav} text="قیمت فروش هر واحد" unit="ریال" />
       </div>
       {/* {isAsset ? (
         <AssetsComponent
@@ -55,10 +52,10 @@ export const Card = ({
         </div>
       )} */}
       <div className="m-2">
-          <Button disable={false} mode="outLine" color="green">
-            خرید
-          </Button>
-        </div>
+        <Button disable={false} mode="outLine" color="green">
+          خرید
+        </Button>
+      </div>
     </div>
   );
 };

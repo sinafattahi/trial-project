@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import {OutBoxTag} from ".";
+import { OutBoxTag } from ".";
 
 const meta = {
   title: "Component/OutBoxTag",
@@ -32,13 +32,6 @@ export const purpleTag: Story = {
 export const blueTag: Story = {
   args: {
     fundTypeCode: 2,
-    fundTypeTitle: "صدور و ابطالی - درامد ثابت",
-  },
-};
-
-export const orangeTag: Story = {
-  args: {
-    fundTypeCode: 3,
     fundTypeTitle: "صدور و ابطالی - درامد ثابت",
   },
 };

@@ -2,7 +2,7 @@ import React from "react";
 
 const classNames = require("classnames");
 interface OutBoxTagProps {
-  fundTypeCode: 1 | 2 | 3 ;
+  fundTypeCode: 1 | 2 ;
   fundTypeTitle: string;
 }
 
@@ -12,7 +12,6 @@ export const OutBoxTag = ({ fundTypeCode, fundTypeTitle }: OutBoxTagProps) => {
     {
       "bg-blue-500": fundTypeCode === 1,
       "bg-purple-500": fundTypeCode === 2,
-      "bg-orange-500": fundTypeCode === 3,
     }
   );
 
