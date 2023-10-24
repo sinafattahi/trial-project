@@ -24,14 +24,21 @@ type Story = StoryObj<typeof meta>;
 
 export const purpleTag: Story = {
   args: {
-    outBoxTagColor: "purple",
-    outBoxText: "قابل معامله - سهامی",
+    fundTypeCode: 1,
+    fundTypeTitle: "قابل معامله - سهامی",
   },
 };
 
 export const blueTag: Story = {
   args: {
-    outBoxTagColor: "blue",
-    outBoxText: "صدور و ابطالی - درامد ثابت",
+    fundTypeCode: 2,
+    fundTypeTitle: "صدور و ابطالی - درامد ثابت",
+  },
+};
+
+export const orangeTag: Story = {
+  args: {
+    fundTypeCode: 3,
+    fundTypeTitle: "صدور و ابطالی - درامد ثابت",
   },
 };

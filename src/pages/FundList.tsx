@@ -1,16 +1,42 @@
 import React from "react";
-import {Card} from "components/Card";
-import {Header} from "components/Header";
+import axios from "axios";
+import { Card } from "components/Card";
+import { Header } from "components/Header";
+import { Footer } from "components/Footer";
+import { RealData } from "types/FundList";
+import { useState , useEffect } from "react"
+// import { FUND_LIST_DATA } from "constants/fundList";
 
-import { FUND_LIST_DATA } from "constants/fundList";
-import {Footer} from "components/Footer";
 
 export const FundList = () => {
+  const [data, setData] = useState<RealData[]>([])
+
+  useEffect(()=>{
+    axios
+    .get("https://testapi.io/api/Ali6600/getFunds")
+    .then(function (response) {
+      setData(response.data.fundTypes);
+      console.log(response.data.fundTypes[0]);
+      console.log(response.data.fundTypes[1]);
+      console.log(response.data.fundTypes[2]);
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+    .finally(function () {
+      // always executed
+    });
+
+
+  },[])
+
+  
   return (
     <div>
       <Header text="صندوق‌های سرمایه گذاری آگاه" />
       <div>
-        {FUND_LIST_DATA.map((fund) => (
+        {data.map((fund) => (
           <Card key={fund.id} {...fund} />
         ))}
       </div>

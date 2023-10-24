@@ -5,32 +5,31 @@ import { OutBoxTag } from "components/OutBoxTag";
 import { Button } from "components/Button";
 import { AssetsComponent } from "components/AssetsComponent";
 import { PriceSection } from "components/PriceSection";
+import { RealData } from "types/FundList";
 
 export const Card = ({
   id,
   name,
-  revenue,
-  isAsset,
-  buyPrice,
-  salePrice,
-  outBoxText,
-  outBoxTagColor,
-  propertyValue = 0,
-  profit = 0,
-  profitPercentage = 0,
-}: CardDataMode) => {
+    companyName,
+    minBuyOrderFund,
+    minSellOrderFund,
+    fundTypeCode,
+    fundTypeTitle,  
+    annualEfficiency
+  
+}: RealData) => {
   return (
     <div className="border-2 p-2 m-2 shadow-xl rounded-md md:w-2/5 md:-translate-x-[73%]">
       <div className="flex justify-between p-1 relative">
-        <span>{name}</span>
-        <Tag revenue={revenue} text="بازده سال" />
-        <OutBoxTag outBoxTagColor={outBoxTagColor} outBoxText={outBoxText} />
+        <span>`${name}-${companyName}`</span>
+        <Tag revenue={annualEfficiency} text="بازده سال" />
+        <OutBoxTag fundTypeCode={fundTypeCode} fundTypeTitle={fundTypeTitle} />
       </div>
       <div className="p-2 m-2">
-        <PriceSection price={buyPrice} text="قیمت خرید هر واحد" unit="ریال" />
-        <PriceSection price={salePrice} text="قیمت فروش هر واحد" unit="ریال" />
+        <PriceSection price={minBuyOrderFund} text="قیمت خرید هر واحد" unit="ریال" />
+        <PriceSection price={minSellOrderFund} text="قیمت فروش هر واحد" unit="ریال" />
       </div>
-      {isAsset ? (
+      {/* {isAsset ? (
         <AssetsComponent
           profit={profit}
           profitPercentage={profitPercentage}
@@ -38,8 +37,8 @@ export const Card = ({
         />
       ) : (
         <></>
-      )}
-      {isAsset ? (
+      )} */}
+      {/* {isAsset ? (
         <div className="m-2 flex gap-2">
           <Button color="green" disable={false} mode="outLine">
             خرید
@@ -54,7 +53,12 @@ export const Card = ({
             خرید
           </Button>
         </div>
-      )}
+      )} */}
+      <div className="m-2">
+          <Button disable={false} mode="outLine" color="green">
+            خرید
+          </Button>
+        </div>
     </div>
   );
 };

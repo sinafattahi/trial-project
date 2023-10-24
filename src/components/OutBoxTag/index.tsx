@@ -2,22 +2,23 @@ import React from "react";
 
 const classNames = require("classnames");
 interface OutBoxTagProps {
-  outBoxTagColor: "blue" | "purple";
-  outBoxText: string;
+  fundTypeCode: 1 | 2 | 3 ;
+  fundTypeTitle: string;
 }
 
-export const OutBoxTag = ({ outBoxTagColor, outBoxText }: OutBoxTagProps) => {
+export const OutBoxTag = ({ fundTypeCode, fundTypeTitle }: OutBoxTagProps) => {
   const outBoxClass = classNames(
     "absolute top-10 right-[-16px] md:top-12 px-4 text-white text-sm",
     {
-      "bg-blue-500": outBoxTagColor === "blue",
-      "bg-purple-500": outBoxTagColor === "purple",
+      "bg-blue-500": fundTypeCode === 1,
+      "bg-purple-500": fundTypeCode === 2,
+      "bg-orange-500": fundTypeCode === 3,
     }
   );
 
   return (
     <div className={outBoxClass}>
-      {outBoxText}
+      {fundTypeTitle}
 
       <div
         className="w-0 h-0 absolute top-0 left-0 ml-[-1px]
