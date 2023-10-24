@@ -1,29 +1,12 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 
-function App() {
+import { FundList } from "pages/FundList";
+
+export default function App() {
   return (
-    <div className="Ap">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h1 className="text-3xl font-bold underline text-red-300">
-            Hello world!
-          </h1>
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" Component={FundList} />
+    </Routes>
   );
 }
-
-export default App;
