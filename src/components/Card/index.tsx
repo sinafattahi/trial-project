@@ -3,13 +3,15 @@ import React from "react";
 import { Tag } from "components/Tag";
 import { OutBoxTag } from "components/OutBoxTag";
 import { Button } from "components/Button";
-// import { AssetsComponent } from "components/AssetsComponent";
+import { AssetsComponent } from "components/AssetsComponent";
 import { PriceSection } from "components/PriceSection";
 import { RealData } from "types/FundList";
+
 
 export const Card = ({
   id,
   name,
+  isAsset = false,
   issuingNav,
   fundTypeCode,
   fundTypeTitle,
@@ -26,16 +28,16 @@ export const Card = ({
         <PriceSection price={issuingNav} text="قیمت خرید هر واحد" unit="ریال" />
         <PriceSection price={issuingNav} text="قیمت فروش هر واحد" unit="ریال" />
       </div>
-      {/* {isAsset ? (
+      {isAsset ? (
         <AssetsComponent
-          profit={profit}
-          profitPercentage={profitPercentage}
-          propertyValue={propertyValue}
+          profit={0}
+          profitPercentage={0}
+          propertyValue={0}
         />
       ) : (
         <></>
-      )} */}
-      {/* {isAsset ? (
+      )}
+      {isAsset ? (
         <div className="m-2 flex gap-2">
           <Button color="green" disable={false} mode="outLine">
             خرید
@@ -50,12 +52,7 @@ export const Card = ({
             خرید
           </Button>
         </div>
-      )} */}
-      <div className="m-2">
-        <Button disable={false} mode="outLine" color="green">
-          خرید
-        </Button>
-      </div>
+      )}
     </div>
   );
 };

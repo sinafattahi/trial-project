@@ -22,21 +22,23 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const haveAssets: Story = {
-  args: {
-    id: 1,
-    name : "هستی‌بخش آگاه",
-    issuingNav: 343_343,
-    fundTypeCode : 1 ,
-    fundTypeTitle: "قابل معامله - سهامی",  
-    annualEfficiency : 12.3
-  },
-};
+// export const haveAssets: Story = {
+//   args: {
+//     id: 1,
+//     name : "هستی‌بخش آگاه",
+//     isAsset: false,
+//     issuingNav: 343_343,
+//     fundTypeCode : 1 ,
+//     fundTypeTitle: "قابل معامله - سهامی",  
+//     annualEfficiency : 12.3
+//   },
+// };
 
 export const dontHaveAssets: Story = {
   args: {
     id: 2,
     name :  "زمرد آگاه",
+    isAsset: false,
     issuingNav: 343_343,
     fundTypeCode : 1 ,
     fundTypeTitle: "صدور و ابطالی - درامد ثابت",  
