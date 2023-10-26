@@ -33,4 +33,5 @@ export const FUND_LIST_DATA : CardDataMode[] = [
 export const TYPE_OF_INVEST: Dictionary<string> = {
     1 : "قابل معامله",
     2 : "صدور و ابطال",
+    3 : ""
 }

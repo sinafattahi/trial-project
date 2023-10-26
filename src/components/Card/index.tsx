@@ -11,6 +11,7 @@ export const Card = ({
   name,
   isAsset = false,
   issuingNav,
+  revokeNav,
   fundTypeCode,
   fundTypeTitle,
   annualEfficiency,
@@ -24,7 +25,8 @@ export const Card = ({
       </div>
       <div className="p-2 m-2">
         <PriceSection price={issuingNav} text="قیمت خرید هر واحد" unit="ریال" />
-        <PriceSection price={issuingNav} text="قیمت فروش هر واحد" unit="ریال" />
+
+        <PriceSection price={revokeNav} text="قیمت فروش هر واحد" unit="ریال" />
       </div>
       {isAsset ? (
         <AssetsComponent profit={0} profitPercentage={0} propertyValue={0} />

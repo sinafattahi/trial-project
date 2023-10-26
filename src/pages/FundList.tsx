@@ -3,20 +3,15 @@ import { Card } from "components/Card";
 import { Header } from "components/Header";
 import { Footer } from "components/Footer";
 import FundListHook from "hook/FundListHook";
-import { useAppSelector, useAppDispatch } from "hook/hooks";
-
-import {
-  selectFundsData,
-  selectInstrumentData,
-  selectIsLoading,
-} from "store/slices";
+import { useAppSelector } from "hook/hooks";
 
 export const FundList = () => {
-  const FundsData = selectFundsData();
-  const InstrumentData = selectInstrumentData();
-  const IsLoading = selectIsLoading();
+  const FundsData = useAppSelector((state) => state.fundsList.FundsData);
+  const InstrumentData = useAppSelector(
+    (state) => state.fundsList.InstrumentData
+  );
 
-  console.log(FundsData);
+  const IsLoading = useAppSelector((state) => state.fundsList.IsLoading);
 
   FundListHook();
 
@@ -28,8 +23,8 @@ export const FundList = () => {
           <Card key={fund.id} {...fund} />
         ))}
 
-        {InstrumentData.map((fund) => (
-          <Card key={fund.id} {...fund} />
+        {InstrumentData.map((instrument) => (
+          <Card key={instrument.id} {...instrument} issuingNav={instrument.issueNav}  />
         ))}
       </>
 

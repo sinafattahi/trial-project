@@ -3,14 +3,13 @@ import classNames from "classnames";
 import { TYPE_OF_INVEST } from "constants/fundList";
 import { FundType, OutBoxTagProps } from "types/FundList";
 
-
-
 export const OutBoxTag = ({ fundTypeCode, fundTypeTitle }: OutBoxTagProps) => {
   const outBoxClass = classNames(
     "absolute top-10 right-[-16px] md:top-12 px-4 text-white text-sm",
     {
       "bg-purple-500": fundTypeCode === FundType.one,
       "bg-blue-500": fundTypeCode === FundType.two,
+      "bg-red-500": fundTypeCode === FundType.three,
     }
   );
 

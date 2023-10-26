@@ -1,9 +1,9 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit"
-import { FundData } from "types/FundList"
+import { FundData, InstrumentData } from "types/FundList"
 
 export interface BasedData {
     FundsData : FundData[],
-    InstrumentData : FundData[],
+    InstrumentData : InstrumentData[],
     IsLoading : boolean
 }
 
@@ -20,7 +20,7 @@ export const fundsListSlice = createSlice({
         SetFunds : ( state, action : PayloadAction<FundData[]> ) => {
             state.FundsData = action.payload;
         },
-        SetInstruments : ( state, action : PayloadAction<FundData[]> ) => {
+        SetInstruments : ( state, action : PayloadAction<InstrumentData[]> ) => {
             state.InstrumentData = action.payload;
         },
         SetIsLoading : (state, action : PayloadAction<boolean>) => {
@@ -30,13 +30,4 @@ export const fundsListSlice = createSlice({
 })
 
 export const { SetFunds, SetInstruments, SetIsLoading } = fundsListSlice.actions
-
-export const selectFundsData = (state : FundData) => 
-// export const selectInstrumentData = () => {
-//     return initialState.InstrumentData 
-// }
-// export const selectIsLoading = () => {
-//     return initialState.IsLoading
-// }
-
 export const fundsListReducer = fundsListSlice.reducer

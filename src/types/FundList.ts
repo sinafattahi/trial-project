@@ -1,11 +1,13 @@
 export enum FundType {
     one = 1,
-    two = 2
+    two = 2,
+    three = 3
   }
 
   export enum outBoxTagColor {
     blue = "blue",
-    purple = "purple"
+    purple = "purple",
+    red = "red"
   }
 
 
@@ -17,7 +19,7 @@ export interface CardDataMode{
     buyPrice: number,
     salePrice: number,
     outBoxText: string,
-    outBoxTagColor : outBoxTagColor.blue | outBoxTagColor.purple,
+    outBoxTagColor : outBoxTagColor.blue | outBoxTagColor.purple | outBoxTagColor.red ,
     propertyValue?: number,
     profit ?: number,
     profitPercentage ?: number
@@ -27,10 +29,22 @@ export interface FundData{
     id: number,
     name : string,
     isAsset : boolean,
-    issuingNav: number,
-    fundTypeCode : FundType.one | FundType.two ,
+    issuingNav : number,
+    revokeNav : number,
+    fundTypeCode : FundType.one | FundType.two | FundType.three ,
     fundTypeTitle: string,  
     annualEfficiency : number
+}
+
+export interface InstrumentData{
+  id: number,
+  name : string,
+  isAsset : boolean,
+  issueNav : number,
+  revokeNav : number,
+  fundTypeCode : FundType.one | FundType.two | FundType.three ,
+  fundTypeTitle: string,  
+  annualEfficiency : number
 }
 
 export interface RoutesArray {
@@ -44,6 +58,6 @@ export interface Dictionary<T> {
 
 
   export interface OutBoxTagProps {
-    fundTypeCode: FundType.one | FundType.two;
+    fundTypeCode: FundType.one | FundType.two | FundType.three
     fundTypeTitle: string;
   }

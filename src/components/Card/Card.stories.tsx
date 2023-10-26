@@ -28,6 +28,7 @@ export const dontHaveAssets: Story = {
     name: "زمرد آگاه",
     isAsset: false,
     issuingNav: 343_343,
+    revokeNav: 343_343,
     fundTypeCode: 1,
     fundTypeTitle: "صدور و ابطالی - درامد ثابت",
     annualEfficiency: 12.3,

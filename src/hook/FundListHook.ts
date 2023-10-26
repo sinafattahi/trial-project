@@ -15,7 +15,6 @@ const FundListHook = () => {
       axios
         .get(GET_FUNDS_API)
         .then(function (response) {
-          console.log(response.data.fundTypes)
           dispatch(SetFunds(response.data.fundTypes));
           dispatch(SetInstruments(response.data.instruments));
             
