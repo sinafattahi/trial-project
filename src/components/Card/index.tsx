@@ -1,12 +1,10 @@
 import React from "react";
-// import { CardDataMode } from "types/FundList";
 import { Tag } from "components/Tag";
 import { OutBoxTag } from "components/OutBoxTag";
 import { Button } from "components/Button";
 import { AssetsComponent } from "components/AssetsComponent";
 import { PriceSection } from "components/PriceSection";
-import { RealData } from "types/FundList";
-
+import { FundData } from "types/FundList";
 
 export const Card = ({
   id,
@@ -16,7 +14,7 @@ export const Card = ({
   fundTypeCode,
   fundTypeTitle,
   annualEfficiency,
-}: RealData) => {
+}: FundData) => {
   return (
     <div className="border-2 p-2 m-2 shadow-xl rounded-md md:w-2/5 md:-translate-x-[73%]">
       <div className="flex justify-between p-1 relative">
@@ -29,11 +27,7 @@ export const Card = ({
         <PriceSection price={issuingNav} text="قیمت فروش هر واحد" unit="ریال" />
       </div>
       {isAsset ? (
-        <AssetsComponent
-          profit={0}
-          profitPercentage={0}
-          propertyValue={0}
-        />
+        <AssetsComponent profit={0} profitPercentage={0} propertyValue={0} />
       ) : (
         <></>
       )}
