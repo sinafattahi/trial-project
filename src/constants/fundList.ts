@@ -1,4 +1,6 @@
 import { CardDataMode } from "types/FundList"
+import { Dictionary } from "types/FundList"
+import { outBoxTagColor } from "types/FundList"
 
 export const FUND_LIST_DATA : CardDataMode[] = [
     {
@@ -9,7 +11,7 @@ export const FUND_LIST_DATA : CardDataMode[] = [
         buyPrice : 343_343,
         salePrice : 343_343,
         outBoxText : "قابل معامله - سهامی",
-        outBoxTagColor: "purple",
+        outBoxTagColor: outBoxTagColor.purple,
         propertyValue : 33_343_343,
         profit : 343_343,
         profitPercentage : 12.3
@@ -22,8 +24,14 @@ export const FUND_LIST_DATA : CardDataMode[] = [
         buyPrice : 343_343,
         salePrice : 343_343,
         outBoxText : "صدور و ابطالی - درامد ثابت",
-        outBoxTagColor: "blue"
+        outBoxTagColor: outBoxTagColor.blue
     }
     
 ]
 
+
+export const TYPE_OF_INVEST: Dictionary<string> = {
+    1 : "قابل معامله",
+    2 : "صدور و ابطال",
+    3 : ""
+}

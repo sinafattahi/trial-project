@@ -1,23 +1,21 @@
 import React from "react";
+import classNames from "classnames";
+import { TYPE_OF_INVEST } from "constants/fundList";
+import { FundType, OutBoxTagProps } from "types/FundList";
 
-const classNames = require("classnames");
-interface OutBoxTagProps {
-  outBoxTagColor: "blue" | "purple";
-  outBoxText: string;
-}
-
-export const OutBoxTag = ({ outBoxTagColor, outBoxText }: OutBoxTagProps) => {
+export const OutBoxTag = ({ fundTypeCode, fundTypeTitle }: OutBoxTagProps) => {
   const outBoxClass = classNames(
     "absolute top-10 right-[-16px] md:top-12 px-4 text-white text-sm",
     {
-      "bg-blue-500": outBoxTagColor === "blue",
-      "bg-purple-500": outBoxTagColor === "purple",
+      "bg-purple-500": fundTypeCode === FundType.one,
+      "bg-blue-500": fundTypeCode === FundType.two,
+      "bg-red-500": fundTypeCode === FundType.three,
     }
   );
 
   return (
     <div className={outBoxClass}>
-      {outBoxText}
+      {`${TYPE_OF_INVEST[fundTypeCode]}-${fundTypeTitle}`}
 
       <div
         className="w-0 h-0 absolute top-0 left-0 ml-[-1px]
