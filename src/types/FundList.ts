@@ -19,7 +19,7 @@ export interface CardDataMode{
     buyPrice: number,
     salePrice: number,
     outBoxText: string,
-    outBoxTagColor : outBoxTagColor.blue | outBoxTagColor.purple | outBoxTagColor.red ,
+    outBoxTagColor : outBoxTagColor,
     propertyValue?: number,
     profit ?: number,
     profitPercentage ?: number
@@ -31,7 +31,7 @@ export interface FundData{
     isAsset : boolean,
     issuingNav : number,
     revokeNav : number,
-    fundTypeCode : FundType.one | FundType.two | FundType.three ,
+    fundTypeCode : FundType,
     fundTypeTitle: string,  
     annualEfficiency : number
 }
@@ -42,7 +42,7 @@ export interface InstrumentData{
   isAsset : boolean,
   issueNav : number,
   revokeNav : number,
-  fundTypeCode : FundType.one | FundType.two | FundType.three ,
+  fundTypeCode : FundType,
   fundTypeTitle: string,  
   annualEfficiency : number
 }
@@ -51,13 +51,13 @@ export interface RoutesArray {
     [linkName : string] : string
 }
 export interface Dictionary<T> {
-    [Key: string]: T;
+    [Key: string]: T
   }
 
 
 
 
   export interface OutBoxTagProps {
-    fundTypeCode: FundType.one | FundType.two | FundType.three
-    fundTypeTitle: string;
+    fundTypeCode: FundType
+    fundTypeTitle: string
   }

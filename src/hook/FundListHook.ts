@@ -1,17 +1,18 @@
-import React from 'react'
 import axios from "axios";
-import {useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { GET_FUNDS_API } from 'constants/api';
 import { useAppDispatch } from "hook/hooks";
-import { SetFunds, SetInstruments, SetIsLoading } from 'store/slices';
+import { SetFunds, SetInstruments } from 'store/slices';
 
-const FundListHook = () => {
+export const FundListHook = () => {
 
     const dispatch = useAppDispatch();
 
+    const [isLoading, setIsLoading] = useState<boolean>(false)
+
     const getFunds = () => {
 
-      dispatch(SetIsLoading(true));
+      setIsLoading(true)
       axios
         .get(GET_FUNDS_API)
         .then(function (response) {
@@ -21,7 +22,7 @@ const FundListHook = () => {
         })
         .catch((error) => {})
         .finally(() => {
-          dispatch(SetIsLoading(false));
+          setIsLoading(false);
         });
     }
 
@@ -31,8 +32,6 @@ const FundListHook = () => {
 
 
   return {
-
+    dataIsLoading : isLoading
   }
 }
-
-export default FundListHook

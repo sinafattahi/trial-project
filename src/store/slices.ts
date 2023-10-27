@@ -4,13 +4,11 @@ import { FundData, InstrumentData } from "types/FundList"
 export interface BasedData {
     FundsData : FundData[],
     InstrumentData : InstrumentData[],
-    IsLoading : boolean
 }
 
 const initialState : BasedData = {
     FundsData : [],
     InstrumentData : [],
-    IsLoading : false
 }
 
 export const fundsListSlice = createSlice({
@@ -22,12 +20,9 @@ export const fundsListSlice = createSlice({
         },
         SetInstruments : ( state, action : PayloadAction<InstrumentData[]> ) => {
             state.InstrumentData = action.payload;
-        },
-        SetIsLoading : (state, action : PayloadAction<boolean>) => {
-            state.IsLoading = action.payload;
         }
     }
 })
 
-export const { SetFunds, SetInstruments, SetIsLoading } = fundsListSlice.actions
+export const { SetFunds, SetInstruments } = fundsListSlice.actions
 export const fundsListReducer = fundsListSlice.reducer
